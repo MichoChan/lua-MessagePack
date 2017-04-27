@@ -838,7 +838,7 @@ function m.unpack (s)
     checktype('unpack', 1, s, 'string')
     local cursor = cursor_string(s)
     local data = unpack_cursor(cursor)
-    if cursor.i < cursor.j then
+    if cursor.i <= cursor.j then
         error "extra bytes"
     end
     return data
